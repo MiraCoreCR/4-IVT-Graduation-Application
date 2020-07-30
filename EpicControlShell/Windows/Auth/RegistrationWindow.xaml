@@ -1,0 +1,59 @@
+﻿<Window x:Class="EpicControlShell.Windows.Auth.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EpicControlShell.Windows.Auth"
+        mc:Ignorable="d"
+        Title="Registration New User" Height="350" Width="500" Background="#FF2D2D30" FontFamily="{StaticResource UbuntuMono}" ResizeMode="NoResize">
+
+    <Grid>
+        <StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Miris Entertainment" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="#FF87D6C0" FontSize="22" FontWeight="Bold"/>
+                <Label Grid.Column="0" Content="{StaticResource CompanyLogo}" VerticalAlignment="Center" />
+            </Grid>
+
+            <Grid>
+                <Label Content="Full Name*"  Foreground="#FF87D6C0" Margin="0, 10, 0, 20" FontSize="16"/>
+                <TextBox x:Name="FullNameTextBox" VerticalAlignment="Center" Margin="100, 10, 5, 20" MinHeight="24" HorizontalContentAlignment="Left" FontSize="16"/>
+                <TextBlock x:Name="FullNameErrorText" Text="The field length must not exceed 300 characters" Margin="170, 35, 0, 0" FontStyle="Italic" Foreground="#FFECC894" Visibility="Hidden"/>
+            </Grid>
+
+            <Grid>
+                <Label Content="Nickname*" Foreground="#FF87D6C0" Margin="0, 0, 0, 20" FontSize="16"/>
+                <TextBox x:Name="NickNameTextBox" VerticalAlignment="Center" Margin="100, 0, 5, 20" MinHeight="24" HorizontalContentAlignment="Left" FontSize="16"/>
+                <TextBlock x:Name="NickNameErrorText" Text="The field length must not exceed 50 characters" Margin="170, 25, 0, 0"  FontStyle="Italic" Foreground="#FFECC894" Visibility="Hidden"/>
+            </Grid>
+
+            <Grid>
+                <Label Content="Email*" Foreground="#FF87D6C0" Margin="0, 0, 0, 20" FontSize="16"/>
+                <TextBox x:Name="EmailTextBox" VerticalAlignment="Center" Margin="100, 0, 5, 20" MinHeight="24" HorizontalContentAlignment="Left" FontSize="16"/>
+                <TextBlock x:Name="EmailErrorText" Text="The field length must not exceed 100 characters" Margin="170, 25, 0, 0" FontStyle="Italic" Foreground="#FFECC894" Visibility="Hidden"/>
+            </Grid>
+
+            <Grid>
+                <Label Content="Password*" Foreground="#FF87D6C0" Margin="0, 0, 0, 20" FontSize="16"/>
+                <PasswordBox x:Name="PasswordTextBox" VerticalAlignment="Center" Margin="100, 0, 5, 20" MinHeight="24" HorizontalContentAlignment="Left" FontSize="16"/>
+                <TextBlock x:Name="PasswordErrorText" Text="The password must not be shorter than 6 characters" Margin="170, 25, 0, 0" FontStyle="Italic" Foreground="#FFECC894" Visibility="Hidden"/>
+            </Grid>
+
+            <Grid>
+                <Label Content="Repeat password*" Foreground="#FF87D6C0" Margin="0, 1.5, 0, 20" FontSize="11"/>
+                <PasswordBox x:Name="RepeatPasswordTextBox" VerticalAlignment="Center" Margin="100, 0, 5, 20" MinHeight="24" HorizontalContentAlignment="Left" FontSize="16"/>
+                <TextBlock x:Name="RepeatPasswordErrorText" Text="Passwords don't match" Margin="170, 25, 0, 0" FontStyle="Italic" Foreground="#FFECC894" Visibility="Hidden"/>
+            </Grid>
+
+        </StackPanel>
+
+        <Button x:Name="AcceptButton" Content="{StaticResource AcceptIcon}" Margin="0, 0, 50, 10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="30" Height="30" Background="#FF2D2D30" Click="AcceptButton_Click" BorderBrush="{x:Null}"/>
+        <Button x:Name="CancelButton" Content="{StaticResource CloseIcon}" Margin="0, 0, 10, 10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="30" Height="30" Background="#FF2D2D30" Click="CancelButton_Click" BorderBrush="{x:Null}"/>
+
+    </Grid>
+</Window>

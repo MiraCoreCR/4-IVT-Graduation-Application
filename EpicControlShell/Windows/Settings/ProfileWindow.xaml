@@ -1,0 +1,63 @@
+﻿<Window x:Class="EpicControlShell.Windows.Settings.ProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EpicControlShell.Windows.Settings"
+        mc:Ignorable="d"
+        Title="ProfileWindow" Height="450" Width="800" ResizeMode="NoResize" FontFamily="{StaticResource UbuntuMono}">
+    <Grid Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.33*"/>
+        </Grid.RowDefinitions>
+
+        
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="{StaticResource UserIcon}" HorizontalAlignment="Center"/>
+
+            <StackPanel Grid.Column="1" Margin="5">
+                <Label x:Name="FullNickNameLabel" Content="FullName and NickName" FontSize="24" Foreground="#FF62DEBD"/>
+                <Label x:Name="EmailLabel" Content="Email" FontSize="24" Foreground="#FF62DEBD"/>
+                <Label x:Name="GroupLabel" Content="Group" FontSize="24" Foreground="#FF62DEBD"/>
+            </StackPanel>
+
+            <Button Grid.Column="2" x:Name="LogOutButton" Content="Log Out" Width="100" Height="100" Margin="0, 0, 0, 0" Foreground="#FF87D6C0" Background="#FF3F3F46" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Click="LogOutButton_Click" IsDefault="True"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Border BorderBrush="#FF616161" BorderThickness="2, 2, 2, 2" Margin="5">
+                <StackPanel>
+                    <Label Content="Change Password" HorizontalAlignment="Center" Foreground="#FF62DEBD" Margin="0, 0, 0, 10" FontSize="20" />
+                    <Grid Margin="0, 0, 3, 5">
+                        <Label Content="Old Password" Foreground="#FF62DEBD" FontSize="20"/>
+                        <TextBox x:Name="OldPasswordTextBox" Margin="230, 0, 0, 0" Height="22"/>
+                    </Grid>
+                    <Grid Margin="0, 0, 3, 5">
+                        <Label Content="New Password" Foreground="#FF62DEBD" FontSize="20"/>
+                        <PasswordBox x:Name="NewPasswordTextBox" Margin="230, 0, 0, 0" Height="22"/>
+                    </Grid>
+                    <Grid Margin="0, 0, 3, 5">
+                        <Label Content="Repeat new Password" Foreground="#FF62DEBD" FontSize="20"/>
+                        <PasswordBox x:Name="RepeatPasswordTextBox" Margin="230, 0, 0, 0" Height="22"/>
+                    </Grid>
+                    <Button x:Name="AcceptButton" Content="Accept" Margin="0, 10, 0, 0" Width="100" Height="30" Foreground="#FF87D6C0" Background="#FF3F3F46" FontSize="18"  Click="AcceptButton_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Button x:Name="OKButton" Content="OK" Width="100" Height="50" Margin="0, 0, 5, 5" Foreground="#FF87D6C0" Background="#FF3F3F46" FontSize="22" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsCancel="True"/>
+        </Grid>
+        
+    </Grid>
+</Window>

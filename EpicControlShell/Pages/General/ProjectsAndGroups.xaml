@@ -1,0 +1,106 @@
+﻿<Page x:Class="EpicControlShell.Pages.General.ProjectsAndGroups"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EpicControlShell.Pages.General"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1000"
+      Title="ProjectsAndGroups" FontFamily="{StaticResource UbuntuMono}">
+
+    <Grid Background="#FF2D2D30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition x:Name="InformationOnTheRight" Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.Column="0" Margin="5, 0, 0, 0" BorderBrush="{x:Null}" Background="{x:Null}">
+            <TabItem x:Name="TabProjects" Width="300" Background="#FF3F3F46" BorderBrush="{x:Null}" IsSelected="True">
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="{StaticResource ProjectIcon}"/>
+                        <Label Content="Projects" Grid.Column="1" Margin="5, 0, 0, 0"  VerticalContentAlignment="Center" FontSize="18" Foreground="#FF87D6C0" />
+                    </Grid>
+                </TabItem.Header>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel x:Name="ProjectsList"/>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem x:Name="TabCards" Width="300" Background="#FF3F3F46" BorderBrush="{x:Null}">
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="{StaticResource GroupsIcon_Dark}" HorizontalContentAlignment="Stretch" />
+                        <Label Content="Groups" Grid.Column="1" Margin="5, 0, 0, 0"  VerticalContentAlignment="Center" FontSize="18" Foreground="#FF87D6C0"/>
+                    </Grid>
+                </TabItem.Header>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel x:Name="GroupsList"/>
+                </ScrollViewer>
+                
+            </TabItem>
+        </TabControl>
+
+        <Border Grid.Column="1" BorderBrush="#FF616161" BorderThickness="2, 0, 0, 0">
+            <Grid Background="#FF2D2D30">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="5">
+                    <StackPanel Margin="5">
+
+                        <Grid>
+                            <Button Height="30" Width="30" Content="{StaticResource CloseIcon}" HorizontalAlignment="Right" Margin="0, 0, 5, 5" Background="#FF2D2D30" BorderBrush="{x:Null}" Click="InformationOnTheRightCloseButton_Click"/>
+                            <Button x:Name="InformationOnTheRight_Delete" Height="30" Width="30" Content="{StaticResource DeleteIcon}" HorizontalAlignment="Right" Margin="0, 0, 40, 5" Background="#FF2D2D30" BorderBrush="{x:Null}" Click="InformationOnTheRightDeleteButton_Click"/>
+                            <Button x:Name="InformationOnTheRight_AcceptChanges" Height="30" Width="30" Content="{StaticResource AcceptIcon}" HorizontalAlignment="Right" Margin="0, 0, 75, 5" Background="#FF2D2D30" BorderBrush="{x:Null}" Click="InformationOnTheRightAcceptChangesButton_Click"/>
+                        </Grid>
+
+                        <Grid>
+                            <Rectangle Width="29" Height="31" Margin="0" RadiusX="5" RadiusY="5" Fill="Red" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Rectangle.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Red">
+                                            <MenuItem.Icon>
+                                                <Rectangle Height="15" Width="15" RadiusX="2" RadiusY="2" Fill="Red"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+
+                                        <MenuItem Header="Green">
+                                            <MenuItem.Icon>
+                                                <Rectangle Height="15" Width="15" RadiusX="2" RadiusY="2" Fill="Green"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                                </Rectangle.ContextMenu>
+                            </Rectangle>
+                            <TextBox x:Name="ProjectTitle" Text="Project Title" TextWrapping="WrapWithOverflow" FontSize="20" Margin="35, 0, 0, 5" Foreground="#FF87D6C0" Background="#FF36363A" BorderBrush="#FF5F626A" Padding="5, 5, 2, 5"/>
+                        </Grid>
+
+                        <Grid Margin="0, 0, 0, 10">
+                            <Label Content="Description" FontSize="12" Foreground="#FF6EB6A1"/>
+                            <TextBox x:Name="ProjectDescription" Margin="0, 17, 0, 0" Text="Description of epic or card" TextWrapping="WrapWithOverflow" FontSize="16" Foreground="#FF87D6C0" Background="#FF36363A" BorderBrush="#FF5F626A" Padding="5, 5, 2, 5"/>
+                        </Grid>
+
+                        <Grid x:Name="ProjectMasterGrid" Margin="0, 0, 0, 10">
+                            <Label Content="Project Master" FontSize="12" Foreground="#FF6EB6A1"/>
+                            <Button Content="{StaticResource UserIcon}" Height="30" Width="30" HorizontalAlignment="Left" Margin="5, 20, 5, 0"/>
+                        </Grid>
+
+                        <Separator Background="#7FA4A4A4" Margin="0, 0, 0, 10"/>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

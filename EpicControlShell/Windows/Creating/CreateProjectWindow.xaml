@@ -1,0 +1,28 @@
+﻿<Window x:Class="EpicControlShell.Windows.Creating.CreateProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EpicControlShell.Windows.Creating"
+        mc:Ignorable="d"
+        Title="New Project" Height="450" Width="400" MinHeight="450" ResizeMode="NoResize" FontFamily="{StaticResource UbuntuMono}">
+    
+    <Grid Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Title" Margin="5, 0, 0, 0" Foreground="#9F87D6C0" HorizontalAlignment="Left" FontSize="14"/>
+        <Label x:Name="TitleErrorMessage" Content="Maximum lenght is 100 characters" Margin="5, 0, 5, 0" Foreground="#9FECC894" HorizontalAlignment="Right" FontSize="14" Visibility="Hidden"/>
+        <TextBox x:Name="TitleTextBox" Grid.Row="0" Height="70" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="18" Background="{x:Null}" Margin="5" Foreground="#FF87D6C0"/>
+
+        <Label Grid.Row="1" Margin="5, 0, 0, 0" Content="Description" Foreground="#9F87D6C0" HorizontalAlignment="Left" FontSize="14"/>
+        <Label x:Name="DescriptionErrorMessage" Grid.Row="1" Content="Maximum lenght is 500 characters" Margin="5, 0, 5, 0" Foreground="#9FECC894" HorizontalAlignment="Right" FontSize="14" Visibility="Hidden"/>
+        <TextBox x:Name="DescriptionTextBox" Grid.Row="1" Height="210" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="18" Background="{x:Null}" Margin="5" Foreground="#FF87D6C0"/>
+
+        <Button Grid.Row="2" Height="40" Width="40" HorizontalAlignment="Right" Margin="5" Content="{StaticResource AcceptIcon}" Padding="5" Background="#FF2D2D30" Foreground="#FF87D6C0" IsDefault="True" BorderBrush="{x:Null}" Click="AcceptButton_Click"/>
+        <Button Grid.Row="2" Height="40" Width="40" HorizontalAlignment="Right" Margin="0, 0, 50, 0" Content="{StaticResource CloseIcon}" Padding="5" Background="#FF2D2D30" Foreground="#FF87D6C0" BorderBrush="{x:Null}" IsCancel="True"/>
+    </Grid>
+</Window>
